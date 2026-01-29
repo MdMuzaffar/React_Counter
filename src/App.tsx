@@ -1,8 +1,23 @@
 import { useState } from "react";
 import "./App.css";
 
-const InitialMinutes = 0;
 function App() {
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const [timeLeft, setTimeLeft] = useState<String | null>(null);
+
+  const reset = () => {
+    setMinutes(0);
+    setSeconds(0);
+  };
+
+  const startTimer = () => {
+    const timel = `${minutes} : ${seconds}`;
+    // const timel = minutes + seconds;
+    setTimeLeft(timel);
+  };
+
+  //  MM:SS
   return (
     <>
       <div>
@@ -12,14 +27,27 @@ function App() {
         </div>
 
         <div>
-          <input type="number" />
-          <input type="number" />
+          <input
+            type="number"
+            value={minutes}
+            onChange={(e) => setMinutes(Number(e.target.value))}
+          />
+          <input
+            type="number"
+            value={seconds}
+            onChange={(e) => setSeconds(Number(e.target.value))}
+          />
         </div>
         <div>
-          <button>start</button>
+          <button onClick={startTimer}>start</button>
           <button>Pause</button>
-          <button>Reset</button>
+          <button onClick={reset}>Reset</button>
         </div>
+      </div>
+      <div>
+        <span>
+          <strong>Time</strong> {timeLeft}
+        </span>
       </div>
     </>
   );
