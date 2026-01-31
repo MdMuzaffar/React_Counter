@@ -7,7 +7,7 @@ function App() {
   // const [timeLeft, setTimeLeft] = useState<String | null | Number>(null);
   const [totalTime, setTotalTime] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<null | number>(null);
 
   const reset = () => {
     setMinutes(0);
