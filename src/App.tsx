@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-
+import { Logedin } from "./LogedIn.tsx";
+import { FilteredListExample } from "./filterItems.tsx";
 function App() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -95,6 +96,8 @@ function App() {
           <strong>Time</strong> {totalTime}
         </span>
       </div>
+      <Logedin />
+      <FilteredListExample />
     </>
   );
 }
