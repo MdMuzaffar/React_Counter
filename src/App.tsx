@@ -4,6 +4,8 @@ import { Logedin } from "./LogedIn.tsx";
 import { FilteredListExample } from "./filterItems.tsx";
 import { MUltipleInputsExample } from "./MultipleInputsExample.tsx";
 import { todoList as Todo } from "./Todo.tsx";
+// import { todoList as Todo } from "./Todo.tsx";
+import { todoList as todo1 } from "./todo1.tsx";
 function App() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
@@ -102,6 +104,7 @@ function App() {
       <FilteredListExample />
       <MUltipleInputsExample />
       <Todo />
+      <todo1 />
     </>
   );
 }

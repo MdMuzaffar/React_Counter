@@ -84,7 +84,6 @@ export function todoList() {
   const [edit, setEdit] = useState<number | null>(null);
   const addItem = () => {
     if (input.trim() === "") return;
-
     if (edit !== null) {
       //Update new item
       const newItems = [...items];
@@ -93,7 +92,6 @@ export function todoList() {
       setEdit(null);
     } else {
       //Add new item
-
       setItems([...items, input]);
     }
     setInput("");
